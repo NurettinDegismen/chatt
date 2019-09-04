@@ -14,18 +14,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var ref = DatabaseReference.init()
     var userName: String?
 
+    @IBOutlet weak var leftButton: UINavigationItem!
+    @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var msgTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         login()
         self.ref = Database.database().reference()
         chatTableView.delegate = self
         chatTableView.dataSource = self
-
     }
-  
-
+ 
     var chatList = [Chat]()
     
     func loadChatRoom() {
@@ -42,7 +43,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                             postDate = postDateIn
                         }
                         
-                        self.chatList.append(Chat(userName: userName!, text: text!, datePost: "\(postDate)"))
+                        self.chatList.append(Chat(userName: userName!, text: text!, datePost: "\(String(describing: postDate))"))
                     }
                 }
                 
@@ -83,6 +84,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.setChat(chat: chatList[indexPath.row])
         return cell
     }
-
+ 
 }
 
