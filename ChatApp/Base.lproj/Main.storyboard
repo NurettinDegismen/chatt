@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tTL-o2-o1Q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="766"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="722"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellChat" rowHeight="212" id="CkU-mD-aKD" customClass="ChatTableViewCell" customModule="ChatApp" customModuleProvider="target">
@@ -146,6 +146,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZm-jk-9SN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JEV-VH-woW"/>
+                                    <constraint firstAttribute="width" constant="414" id="byU-BR-4bL"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="title" id="Xhi-HM-7Wx">
+                                        <barButtonItem key="leftBarButtonItem" title="logout" id="gs0-Cj-uYJ">
+                                            <connections>
+                                                <segue destination="Tic-aY-MLR" kind="show" id="2u6-G6-dI0"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -158,19 +174,24 @@
                             <constraint firstAttribute="trailing" secondItem="tTL-o2-o1Q" secondAttribute="trailing" id="Xe6-UK-bS0"/>
                             <constraint firstItem="tTL-o2-o1Q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YFB-a5-fNq"/>
                             <constraint firstItem="TSK-I9-ndY" firstAttribute="top" secondItem="tTL-o2-o1Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Ynj-TM-zyu"/>
+                            <constraint firstItem="PZm-jk-9SN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a5W-H6-koX"/>
+                            <constraint firstItem="PZm-jk-9SN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bLO-dm-ld6"/>
                             <constraint firstItem="TSK-I9-ndY" firstAttribute="top" secondItem="tTL-o2-o1Q" secondAttribute="bottom" constant="8" id="bV2-Wy-NXj"/>
                             <constraint firstItem="TTV-Qt-ngI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="334" id="dg4-Bp-VGx"/>
                             <constraint firstItem="TSK-I9-ndY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="774" id="dlt-kk-EsR"/>
                             <constraint firstItem="TTV-Qt-ngI" firstAttribute="centerX" secondItem="TSK-I9-ndY" secondAttribute="centerX" constant="191" id="nTs-84-ZD1"/>
-                            <constraint firstItem="tTL-o2-o1Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="paK-aM-T6y"/>
-                            <constraint firstItem="tTL-o2-o1Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vc4-IJ-aE4"/>
+                            <constraint firstItem="tTL-o2-o1Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="paK-aM-T6y"/>
+                            <constraint firstItem="PZm-jk-9SN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sjq-Kl-wLt"/>
+                            <constraint firstItem="tTL-o2-o1Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="vc4-IJ-aE4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TTV-Qt-ngI" secondAttribute="bottom" constant="3" id="zqk-tu-peF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="chatTableView" destination="tTL-o2-o1Q" id="9h6-xQ-fi2"/>
+                        <outlet property="leftButton" destination="Xhi-HM-7Wx" id="FFU-0C-ogD"/>
                         <outlet property="msgTextField" destination="TSK-I9-ndY" id="hXz-wM-b8S"/>
+                        <outlet property="naviBar" destination="PZm-jk-9SN" id="CsA-Uo-UVf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
